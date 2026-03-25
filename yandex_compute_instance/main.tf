@@ -25,6 +25,6 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   metadata = {
-    user-data = "${file("./cloud-init/linux/meta.txt")}"
+    user-data = var.cloud_init
   }
 }
