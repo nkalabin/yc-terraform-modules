@@ -51,3 +51,7 @@ variable "core_fraction" {
   type = string
   default = "20"
 }
+
+variable "cloud_init" {
+  type = string
+}
