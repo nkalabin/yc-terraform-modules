@@ -18,40 +18,27 @@ variable "distro_map" {
   }
 }
 
-#variable "ssh_key" {
-#  type=string
-#}
-
 variable "public_ip" {
   type=string
   default = "true"
 }
 
-variable "disk_type" {
-    type = string
-    default = "network-hdd"
-}
-
-variable "disk_size" {
-    type = string
-    default = "10"
-}
-
-variable "cpus" {
-    type = string
-    default = "2"
-}
-
-variable "memory" {
-    type = string
-    default = "2"
-}
-
-variable "core_fraction" {
-  type = string
-  default = "20"
+variable "vm_resources" {
+  type = map(string)
+  default = {
+    "disk_size" = "10"
+    "disk_type" = "network-hdd"
+    "cpus" = "2"
+    "core_fraction" = "20"
+    "memory" = "2"
+  }
 }
 
 variable "cloud_init" {
   type = string
+}
+
+variable "run_ansible" {
+  type=bool
+  default=false
 }
